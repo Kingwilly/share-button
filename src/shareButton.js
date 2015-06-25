@@ -252,8 +252,10 @@ class ShareButton extends ShareUtils {
   _eventOpen(button, label) {
     if(this._hasClass(button, 'load'))
       this._removeClass(button, 'load');
-
-    this._collisionDetection(button, label);
+    if(this.collision){
+      console.log("here!!!!");
+      this._collisionDetection(button, label);
+    }
     this._addClass(button, 'active');
   }
 
